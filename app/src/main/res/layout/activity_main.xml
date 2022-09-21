@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="#FF4081"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Broadcaster/Guide" />
+
+
+            <EditText
+
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp"
+                android:layout_margin="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:hint="type your name"
+                android:id="@+id/youname"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            </EditText>
+
+            <EditText
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:inputType="number"
+
+                android:hint="type Room number"
+                android:id="@+id/roomnumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            </EditText>
+
+            <Button
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:id="@+id/buttonbroadcaster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join Room broadcaster"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:id="@+id/socketstatus"
+                android:textColor="#150301"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Socket Status: NO" />
+
+            <TextView
+                android:id="@+id/broadcasterstatus"
+                android:textColor="#150301"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register as Broadcaster: NO" />
+
+
+            <TextView
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="3dp"
+                android:background="@color/teal_700"
+                android:textColor="#F8F5F5"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WebRTC Status: Not Connected" />
+
+        <LinearLayout
+            android:id="@+id/viewlistLL"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:visibility="gone"
+                android:textSize="15dp"
+
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:textStyle="bold"
+                android:id="@+id/mute"
+                android:textColor="@color/purple_700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Audio Broadcast : OFF" />
+            <TextView
+                android:visibility="gone"
+                android:textSize="15dp"
+                android:layout_margin="5dp"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:textStyle="bold"
+                android:id="@+id/unmute"
+                android:textColor="@color/purple_700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Audio Broadcast : On"
+                />
+            <TextView
+                android:layout_marginTop="8dp"
+                android:textColor="#605E5E"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Viewerlsit" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                tools:itemCount="3"
+                tools:listitem="@layout/newviewerlist_adapter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/sendall"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:textColor="#3F51B5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send All " />
+        </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
